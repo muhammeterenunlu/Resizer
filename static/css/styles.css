@@ -1,0 +1,155 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.container {
+  background-color: #eeededb8;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 600;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.option-label {
+  flex: 1;
+  font-weight: bold;
+  color: #555;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  justify-content: end;
+}
+
+.file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.file-upload label {
+  flex: none;
+}
+
+input[type='file'],
+input[type='range'],
+input[type='submit'],
+input[type='radio'] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
+}
+
+input[type='submit'] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+label {
+  font-weight: 500;
+  color: #555;
+}
+
+.enhance-choice,
+.enhance-options {
+  margin-bottom: 50px;
+}
+
+.input-group.submit-group {
+  justify-content: center;
+}
+
+/* Radyo butonları için stil değişiklikleri */
+input[type='radio'] {
+  display: none;
+}
+
+input[type='radio'] + label {
+  position: relative;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  transition: all 0.2s;
+  color: #555;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Evet için özel stil */
+input[type='radio'][value='yes']:checked + label {
+  background-color: #4caf50; /* hafif yeşil */
+  color: #fff;
+}
+
+/* Hayır için özel stil */
+input[type='radio'][value='no']:checked + label {
+  background-color: #ff6961; /* hafif kırmızı */
+  color: #fff;
+}
+
+/* Renkli için özel stil */
+input[type='radio'][value='colorful']:checked + label {
+  background-color: #ffd700; /* hafif sarı */
+  color: #555;
+}
+
+/* Renksiz (gri) için özel stil */
+input[type='radio'][value='grayscale']:checked + label {
+  background-color: #c0c0c0; /* hafif gri */
+  color: #555;
+}
+
+input[type='radio'] + label:hover {
+  background-color: #d1d1d1;
+}
+
+input[type='radio']:checked + label:hover {
+  opacity: 0.9;
+}
+
+.options label {
+  margin: 0; /* zaten yukarıda belirtilen boşluğu kaldırmak için */
+}

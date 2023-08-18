@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görsel Düzenleyici</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="static/js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Görsel Düzenleyici</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+
+            <div class="file-upload">
+                <label for="photo">Görsel Seçin:</label>
+                <input type="file" name="photo" id="photo">
+            </div>
+
+            <div class="input-group">
+                <label>Yüzdelik Boyutlandırma:</label>
+                <input type="range" name="percentage" id="percentage" min="1" max="300" value="100">
+                <span id="percentageValue">100%</span>
+            </div>
+
+            <div class="input-group enhance-choice">
+                <label class="option-label">İyileştirmek istiyor musunuz?</label>
+                <div class="options">
+                    <input type="radio" name="enhance" value="yes" id="yes" required>
+                    <label for="yes">Evet</label>
+
+                    <input type="radio" name="enhance" value="no" id="no" required checked>
+                    <label for="no">Hayır</label>
+                </div>
+            </div>
+            <div class="input-group color-choice" style="display: none;">
+                <label class="option-label">Görseliniz:</label>
+                <div class="options">
+                    <input type="radio" name="color" value="colorful" id="colorful" required checked>
+                    <label for="colorful">Renkli</label>
+
+                    <input type="radio" name="color" value="grayscale" id="grayscale" required>
+                    <label for="grayscale">Renksiz</label>
+
+                </div>
+            </div>
+
+            <div class="input-group submit-group">
+                <input type="submit" value="YÜKLE">
+            </div>
+
+        </form>
+
+        {% if request.method == 'POST' %}
+        <h2>Boyutlandırılmış Görsel:</h2>
+        <a href="{{ url_for('uploaded_file', filename='resized_' + request.files['photo'].filename) }}"
+            download>Boyutlandırılmış Görseli İndir</a>
+        {% endif %}
+    </div>
+</body>
+
+</html>
