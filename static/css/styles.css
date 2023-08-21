@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  background-color: #eeededb8;
+  background-color: #eeedede8;
   padding: 20px 30px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -30,6 +30,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
   margin-bottom: 50px;
 }
 
@@ -86,7 +87,7 @@ input[type='range'] {
 }
 
 label {
-  font-weight: 500;
+  font-weight: 800;
   color: #555;
 }
 

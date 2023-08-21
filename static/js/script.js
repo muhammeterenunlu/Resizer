@@ -1,18 +1,10 @@
-document.getElementById('percentage').addEventListener('input', function () {
-  document.getElementById('percentageValue').textContent = this.value + '%';
-});
-
-document.querySelectorAll('[name="enhance"]').forEach(function (el) {
-  el.addEventListener('change', function () {
-    if (this.value == 'yes') {
-      document.querySelector('.color-choice').style.display = 'flex';
-    } else {
-      document.getElementById('colorGroup').style.display = 'none';
-    }
-  });
-});
-
 document.addEventListener('DOMContentLoaded', function () {
+  // Yüzde değerinin güncellenmesi
+  document.getElementById('percentage').addEventListener('input', function () {
+    document.getElementById('percentageValue').textContent = this.value + '%';
+  });
+
+  // "enhance" radyo butonlarına tıklandığında "color-choice" divini göster/gizle
   let enhanceChoices = document.querySelectorAll("input[name='enhance']");
   let colorChoiceDiv = document.querySelector('.color-choice');
 
@@ -24,9 +16,5 @@ document.addEventListener('DOMContentLoaded', function () {
         colorChoiceDiv.style.display = 'none';
       }
     });
-  });
-
-  document.getElementById('percentage').addEventListener('input', function () {
-    document.getElementById('percentageValue').textContent = this.value + '%';
   });
 });
